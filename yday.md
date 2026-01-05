@@ -12,14 +12,18 @@ permalink: /yday/
 
 yday is a simple utility that prints the current day of the year as a number from 1 to 366. Perfect for date calculations, logging, and automation scripts.
 
-**Full Name:** Yesterday's Day (Year Day)  
-**Version:** 0.1.1  
+**Full Name:** Year Day  
+**Version:** 0.1.2  
 **Equivalent:** `date +%j`  
 **Repository:** [github.com/pynosaur/yday](https://github.com/pynosaur/yday)
 
 ## Features
 
-- Simple output - just the day number
+- **Day of year** - prints current day number (1-366)
+- **Week number** - shows ISO week of the year with `-w`
+- **Day name** - displays full localized day name in lowercase with `-n`
+- **Monthly calendar** - shows current month calendar with `-m`
+- **Complete date** - full date/time with timezone using `-c`
 - Pure Python - no external dependencies
 - Cross-platform - works everywhere
 - Fast execution - instant results
@@ -46,6 +50,18 @@ cp bazel-bin/yday ~/.local/bin/
 # Print current day of year
 yday
 
+# Show week of year
+yday -w
+
+# Show full day name in lowercase (localized)
+yday -n
+
+# Show monthly calendar
+yday -m
+
+# Show complete date/time
+yday -c
+
 # Show help
 yday --help
 
@@ -58,9 +74,25 @@ yday --version
 ```bash
 $ yday
 5
-```
 
-This means today is the 5th day of the year (January 5th).
+$ yday -w
+2
+
+$ yday -n
+monday
+
+$ yday -m
+   January 2026
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+
+$ yday -c
+Mon Jan  5 11:37:49 WET 2026
+```
 
 ## Use Cases
 
@@ -69,30 +101,39 @@ This means today is the 5th day of the year (January 5th).
 ```bash
 #!/bin/bash
 DAY=$(yday)
-echo "Backup for day $DAY"
+WEEK=$(yday -w)
+echo "Backup for day $DAY, week $WEEK"
 tar -czf "backup-day-$DAY.tar.gz" /data
 ```
 
 ### In Automation
 
 ```bash
-# Daily log files
-LOG_FILE="log-$(yday).txt"
-echo "Process started" > "$LOG_FILE"
+# Daily log files with day name
+LOG_FILE="log-$(yday)-$(yday -n).txt"
+echo "Process started on $(yday -c)" > "$LOG_FILE"
 ```
 
 ### Date Calculations
 
 ```bash
-# Track days since start of year
-echo "We are on day $(yday) of the year"
+# Track days and weeks since start of year
+echo "We are on day $(yday) of the year, week $(yday -w)"
 ```
 
 ### File Naming
 
 ```bash
-# Create numbered directories
-mkdir "day-$(yday)-results"
+# Create numbered directories with day names
+mkdir "day-$(yday)-$(yday -n)-results"
+```
+
+### Display Calendar
+
+```bash
+# Show current month calendar in scripts
+echo "Current month:"
+yday -m
 ```
 
 ## Output Format
