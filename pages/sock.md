@@ -1,6 +1,5 @@
 ---
-layout: tool
+layout: default
 title: "sock - Socket Communication"
 permalink: /sock/
-repo: sock
 ---

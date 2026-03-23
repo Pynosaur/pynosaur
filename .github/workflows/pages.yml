@@ -22,6 +22,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fetch tool READMEs
+        run: |
+          tools="pget see purl yday doc sock"
+          for tool in $tools; do
+            echo "Fetching $tool README..."
+            curl -sL "https://raw.githubusercontent.com/pynosaur/${tool}/main/README.md" -o "/tmp/${tool}_readme.md"
+            head=$(head -n 5 "pages/${tool}.md")
+            echo "$head" > "pages/${tool}.md"
+            echo "" >> "pages/${tool}.md"
+            cat "/tmp/${tool}_readme.md" >> "pages/${tool}.md"
+          done
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 

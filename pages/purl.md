@@ -1,6 +1,5 @@
 ---
-layout: tool
+layout: default
 title: "purl - URL Transfer Tool"
 permalink: /purl/
-repo: purl
 ---

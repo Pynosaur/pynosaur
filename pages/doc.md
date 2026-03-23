@@ -1,6 +1,5 @@
 ---
-layout: tool
+layout: default
 title: "doc - Documentation Viewer"
 permalink: /doc/
-repo: doc
 ---
