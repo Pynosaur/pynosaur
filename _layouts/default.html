@@ -141,31 +141,25 @@
       (function() {
         var currentPage = '{{ page.url }}';
         var toolList = document.getElementById('toolList');
-        var exclude = ['pynosaur', 'pages', '.github'];
 
         fetch('https://api.github.com/orgs/Pynosaur/repos?per_page=100')
           .then(function(r) { return r.json(); })
           .then(function(repos) {
-            var tools = repos.filter(function(r) {
-              return exclude.indexOf(r.name) === -1;
-            }).sort(function(a, b) {
-              return a.name.localeCompare(b.name);
-            });
-
             toolList.innerHTML = '';
+            var added = [];
 
-            tools.forEach(function(repo) {
-              var li = document.createElement('li');
-              var a = document.createElement('a');
-              var path = '/' + repo.name + '/';
-              a.href = path;
-              a.textContent = repo.name;
-              if (currentPage === path) a.className = 'active';
-
+            repos.forEach(function(repo) {
               fetch('https://raw.githubusercontent.com/Pynosaur/' + repo.name + '/main/.program')
                 .then(function(r) { return r.ok ? r.text() : null; })
                 .then(function(text) {
                   if (text) {
+                    var li = document.createElement('li');
+                    var a = document.createElement('a');
+                    var path = '/' + repo.name + '/';
+                    a.href = path;
+                    a.textContent = repo.name;
+                    if (currentPage === path) a.className = 'active';
+
                     var match = text.match(/version:\s*([\d.]+)/);
                     if (match) {
                       var span = document.createElement('span');
@@ -173,11 +167,15 @@
                       span.textContent = 'v' + match[1];
                       a.appendChild(span);
                     }
+
+                    li.appendChild(a);
+                    li.dataset.name = repo.name;
+                    added.push({name: repo.name, li: li});
+                    added.sort(function(x, y) { return x.name.localeCompare(y.name); });
+                    toolList.innerHTML = '';
+                    added.forEach(function(item) { toolList.appendChild(item.li); });
                   }
                 });
-
-              li.appendChild(a);
-              toolList.appendChild(li);
             });
           })
           .catch(function() {
