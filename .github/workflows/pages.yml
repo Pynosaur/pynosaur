@@ -34,6 +34,7 @@ jobs:
               'doc': 'doc - Documentation Viewer',
               'sock': 'sock - Socket Communication',
               'path': 'path - File Finder',
+              'plack': 'plack - Python Linter',
           }
           raw_open = '{' + '% raw %' + '}'
           raw_close = '{' + '% endraw %' + '}'

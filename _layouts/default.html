@@ -70,6 +70,16 @@
       .tool-index li.hidden {
         display: none;
       }
+      .tool-version {
+        color: #bbb;
+        font-size: 11px;
+        margin-left: 4px;
+      }
+      .tool-index .loading {
+        color: #999;
+        font-size: 12px;
+        font-style: italic;
+      }
     </style>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -107,13 +117,7 @@
           <h3>Tools</h3>
           <input type="text" class="tool-search" id="toolSearch" placeholder="Search...">
           <ul id="toolList">
-            <li><a href="{{ "/pget/" | relative_url }}" {% if page.url == "/pget/" %}class="active"{% endif %}>pget</a></li>
-            <li><a href="{{ "/see/" | relative_url }}" {% if page.url == "/see/" %}class="active"{% endif %}>see</a></li>
-            <li><a href="{{ "/purl/" | relative_url }}" {% if page.url == "/purl/" %}class="active"{% endif %}>purl</a></li>
-            <li><a href="{{ "/yday/" | relative_url }}" {% if page.url == "/yday/" %}class="active"{% endif %}>yday</a></li>
-            <li><a href="{{ "/doc/" | relative_url }}" {% if page.url == "/doc/" %}class="active"{% endif %}>doc</a></li>
-            <li><a href="{{ "/sock/" | relative_url }}" {% if page.url == "/sock/" %}class="active"{% endif %}>sock</a></li>
-            <li><a href="{{ "/path/" | relative_url }}" {% if page.url == "/path/" %}class="active"{% endif %}>path</a></li>
+            <li class="loading">Loading...</li>
           </ul>
         </nav>
       </header>
@@ -134,14 +138,61 @@
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
-      document.getElementById('toolSearch').addEventListener('input', function(e) {
-        var filter = e.target.value.toLowerCase();
-        var items = document.querySelectorAll('#toolList li');
-        items.forEach(function(item) {
-          var text = item.textContent.toLowerCase();
-          item.classList.toggle('hidden', !text.includes(filter));
+      (function() {
+        var currentPage = '{{ page.url }}';
+        var toolList = document.getElementById('toolList');
+        var exclude = ['pynosaur', 'pages'];
+
+        fetch('https://api.github.com/orgs/Pynosaur/repos?per_page=100')
+          .then(function(r) { return r.json(); })
+          .then(function(repos) {
+            var tools = repos.filter(function(r) {
+              return exclude.indexOf(r.name) === -1;
+            }).sort(function(a, b) {
+              return a.name.localeCompare(b.name);
+            });
+
+            toolList.innerHTML = '';
+
+            tools.forEach(function(repo) {
+              var li = document.createElement('li');
+              var a = document.createElement('a');
+              var path = '/' + repo.name + '/';
+              a.href = path;
+              a.textContent = repo.name;
+              if (currentPage === path) a.className = 'active';
+
+              fetch('https://raw.githubusercontent.com/Pynosaur/' + repo.name + '/main/.program')
+                .then(function(r) { return r.ok ? r.text() : null; })
+                .then(function(text) {
+                  if (text) {
+                    var match = text.match(/version:\s*([\d.]+)/);
+                    if (match) {
+                      var span = document.createElement('span');
+                      span.className = 'tool-version';
+                      span.textContent = 'v' + match[1];
+                      a.appendChild(span);
+                    }
+                  }
+                });
+
+              li.appendChild(a);
+              toolList.appendChild(li);
+            });
+          })
+          .catch(function() {
+            toolList.innerHTML = '<li class="loading">Failed to load</li>';
+          });
+
+        document.getElementById('toolSearch').addEventListener('input', function(e) {
+          var filter = e.target.value.toLowerCase();
+          var items = document.querySelectorAll('#toolList li');
+          items.forEach(function(item) {
+            var text = item.textContent.toLowerCase();
+            item.classList.toggle('hidden', !text.includes(filter));
+          });
         });
-      });
+      })();
     </script>
   </body>
 </html>

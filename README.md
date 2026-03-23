@@ -45,6 +45,7 @@ Pynosaur is an ecosystem of lightweight command-line tools built for **learning,
 | [**doc**](/doc/) | Documentation viewer | `man` |
 | [**sock**](/sock/) | Socket communication tool | `netcat` / `telnet` |
 | [**path**](/path/) | File and directory finder | `find` |
+| [**plack**](/plack/) | Simple Python linter | `black` |
 
 ## Quick Start
 
