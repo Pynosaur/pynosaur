@@ -34,7 +34,7 @@ Pynosaur is an ecosystem of lightweight command-line tools built for **learning,
 - **Pure Python exploration** - No external dependencies, just the standard library
 - **Training ground** - Practice software design and Unix philosophy
 
-## Available Tools
+## Some Tools
 
 | Tool | Description | Equivalent |
 |------|-------------|------------|
