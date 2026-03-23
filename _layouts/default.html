@@ -7,6 +7,17 @@
 
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <style>
+      table td:first-child a {
+        text-decoration: none;
+        border-bottom: 1.5px dotted #555;
+        padding-bottom: 1px;
+        transition: border-color 0.2s;
+      }
+      table td:first-child a:hover {
+        border-bottom-color: #000;
+      }
+    </style>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
