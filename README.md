@@ -38,13 +38,13 @@ Pynosaur is an ecosystem of lightweight command-line tools built for **learning,
 
 | Tool | Description | Equivalent |
 |------|-------------|------------|
-| [**pget**](https://pynosaur.org/pget/) | Package manager (Python Gets) | `apt` / `brew` |
-| [**see**](https://pynosaur.org/see/) | File viewer with slicing & highlighting | `cat` |
-| [**purl**](https://pynosaur.org/purl/) | Pure Python URL transfer tool | `curl` |
-| [**yday**](https://pynosaur.org/yday/) | Current day of year (1-366) | `date +%j` |
-| [**doc**](https://pynosaur.org/doc/) | Documentation viewer | `man` |
-| [**sock**](https://pynosaur.org/sock/) | Socket communication tool | `netcat` / `telnet` |
-| [**path**](https://pynosaur.org/path/) | File and directory finder | `find` |
+| [**pget**](/pget/) | Package manager (Python Gets) | `apt` / `brew` |
+| [**see**](/see/) | File viewer with slicing & highlighting | `cat` |
+| [**purl**](/purl/) | Pure Python URL transfer tool | `curl` |
+| [**yday**](/yday/) | Current day of year (1-366) | `date +%j` |
+| [**doc**](/doc/) | Documentation viewer | `man` |
+| [**sock**](/sock/) | Socket communication tool | `netcat` / `telnet` |
+| [**path**](/path/) | File and directory finder | `find` |
 
 ## Quick Start
 
