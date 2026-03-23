@@ -1,9 +1,6 @@
 ---
-layout: default
+layout: tool
 title: "pget - Package Manager"
 permalink: /pget/
+repo: pget
 ---
-
-<meta http-equiv="refresh" content="0; url=https://github.com/pynosaur/pget#readme">
-
-Redirecting to [pget on GitHub](https://github.com/pynosaur/pget#readme)...

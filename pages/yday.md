@@ -1,9 +1,6 @@
 ---
-layout: default
+layout: tool
 title: "yday - Day of Year"
 permalink: /yday/
+repo: yday
 ---
-
-<meta http-equiv="refresh" content="0; url=https://github.com/pynosaur/yday#readme">
-
-Redirecting to [yday on GitHub](https://github.com/pynosaur/yday#readme)...
