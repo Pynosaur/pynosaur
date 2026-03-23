@@ -33,6 +33,7 @@ jobs:
               'yday': 'yday - Day of Year',
               'doc': 'doc - Documentation Viewer',
               'sock': 'sock - Socket Communication',
+              'path': 'path - File Finder',
           }
           raw_open = '{' + '% raw %' + '}'
           raw_close = '{' + '% endraw %' + '}'

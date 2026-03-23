@@ -44,6 +44,7 @@ Pynosaur is an ecosystem of lightweight command-line tools built for **learning,
 | [**yday**](https://github.com/pynosaur/yday) | Current day of year (1-366) | `date +%j` |
 | [**doc**](https://github.com/pynosaur/doc) | Documentation viewer | `man` |
 | [**sock**](https://github.com/pynosaur/sock) | Socket communication tool | `netcat` / `telnet` |
+| [**path**](https://github.com/pynosaur/path) | File and directory finder | `find` |
 
 ## Quick Start
 

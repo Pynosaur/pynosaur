@@ -8,6 +8,7 @@
 - **yday** - Current day of year (1-366)
 - **doc** - Documentation viewer
 - **sock** - Socket communication tool (send/receive messages and files)
+- **path** - File and directory finder powered by pathlib
 
 ## Future
 

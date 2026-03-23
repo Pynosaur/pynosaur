@@ -12,6 +12,7 @@ Modern CLI tools with better UX than traditional Unix utilities.
 - [yday](https://github.com/pynosaur/yday) - Day of year
 - [doc](https://github.com/pynosaur/doc) - Documentation viewer
 - [sock](https://github.com/pynosaur/sock) - Socket communication
+- [path](https://github.com/pynosaur/path) - File and directory finder
 
 ## Get Started
 
