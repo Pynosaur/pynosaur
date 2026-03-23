@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="Pynosaur Logo" width="250">
+  <img src="https://pynosaur.org/logo.png" alt="Pynosaur Logo" width="250">
 </p>
 
 <h1 align="center">Pynosaur</h1>
@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <code>v0.1.0</code>
+  <code>v0.2.0</code>
 </p>
 
 <p align="center">
@@ -43,30 +43,26 @@ Pynosaur is an ecosystem of lightweight command-line tools built for **learning,
 | [**purl**](https://github.com/pynosaur/purl) | Pure Python URL transfer tool | `curl` |
 | [**yday**](https://github.com/pynosaur/yday) | Current day of year (1-366) | `date +%j` |
 | [**doc**](https://github.com/pynosaur/doc) | Documentation viewer | `man` |
+| [**sock**](https://github.com/pynosaur/sock) | Socket communication tool | `netcat` / `telnet` |
 
 ## Quick Start
 
 Install **pget** (Python Gets), the package manager for the Pynosaur ecosystem:
 
 ```bash
-# Clone and build pget
 git clone https://github.com/pynosaur/pget.git
 cd pget && bazel build //:pget_bin
 cp bazel-bin/pget ~/.pget/bin/
 export PATH="$HOME/.pget/bin:$PATH"
 
-# Install any Pynosaur tool
 pget install see
 pget install yday
 
-# Start using them
 see README.md
 yday
 ```
 
 ## Philosophy
-
-Every Pynosaur tool follows these principles:
 
 1. **Pure Python** - Standard library only, keeping Python's purity alive
 2. **Educational** - Learn by recreating classic Unix tools
@@ -83,10 +79,11 @@ This project exists to:
 - **Keep Python pure** - Prove what's possible with just the standard library
 - **Enable extension** - Fork any tool and make it yours
 
-**Use them. Learn from them. Extend them.** Every tool is designed to be understood and modified. It's not about replacing Unix tools - it's about understanding and extending them.
+**Use them. Learn from them. Extend them.** Every tool is designed to be understood and modified.
 
 ## Documentation
 
+- [Website](https://pynosaur.org) - Tool pages and documentation
 - [Roadmap](ROADMAP.md) - Upcoming tools and features
 - [Contributing](CONTRIBUTING.md) - Help build the ecosystem
 
