@@ -54,6 +54,22 @@
         color: #000;
         font-weight: bold;
       }
+      .tool-search {
+        width: 100%;
+        padding: 6px 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 12px;
+        box-sizing: border-box;
+      }
+      .tool-search:focus {
+        outline: none;
+        border-color: #999;
+      }
+      .tool-index li.hidden {
+        display: none;
+      }
     </style>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -89,7 +105,8 @@
 
         <nav class="tool-index">
           <h3>Tools</h3>
-          <ul>
+          <input type="text" class="tool-search" id="toolSearch" placeholder="Search...">
+          <ul id="toolList">
             <li><a href="{{ "/pget/" | relative_url }}" {% if page.url == "/pget/" %}class="active"{% endif %}>pget</a></li>
             <li><a href="{{ "/see/" | relative_url }}" {% if page.url == "/see/" %}class="active"{% endif %}>see</a></li>
             <li><a href="{{ "/purl/" | relative_url }}" {% if page.url == "/purl/" %}class="active"{% endif %}>purl</a></li>
@@ -116,6 +133,16 @@
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+    <script>
+      document.getElementById('toolSearch').addEventListener('input', function(e) {
+        var filter = e.target.value.toLowerCase();
+        var items = document.querySelectorAll('#toolList li');
+        items.forEach(function(item) {
+          var text = item.textContent.toLowerCase();
+          item.classList.toggle('hidden', !text.includes(filter));
+        });
+      });
+    </script>
   </body>
 </html>
 
