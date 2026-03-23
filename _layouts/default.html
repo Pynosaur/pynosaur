@@ -17,6 +17,47 @@
       table td:first-child a:hover {
         border-bottom-color: #000;
       }
+      .tool-index {
+        margin-top: 20px;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 12px;
+      }
+      .tool-index h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #999;
+        margin-bottom: 8px;
+      }
+      .tool-index ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .tool-index li {
+        margin: 0;
+        padding: 0;
+      }
+      .tool-index a {
+        display: block;
+        padding: 4px 0;
+        text-decoration: none;
+        color: #666;
+        font-size: 13px;
+        border-bottom: none;
+        transition: color 0.2s;
+      }
+      .tool-index a:hover {
+        color: #000;
+      }
+      .tool-index a.active {
+        color: #000;
+        font-weight: bold;
+      }
+      .tool-index .tool-eq {
+        color: #bbb;
+        font-size: 11px;
+      }
     </style>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -49,6 +90,19 @@
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
         {% endif %}
+
+        <nav class="tool-index">
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="{{ "/pget/" | relative_url }}" {% if page.url == "/pget/" %}class="active"{% endif %}>pget <span class="tool-eq">apt/brew</span></a></li>
+            <li><a href="{{ "/see/" | relative_url }}" {% if page.url == "/see/" %}class="active"{% endif %}>see <span class="tool-eq">cat</span></a></li>
+            <li><a href="{{ "/purl/" | relative_url }}" {% if page.url == "/purl/" %}class="active"{% endif %}>purl <span class="tool-eq">curl</span></a></li>
+            <li><a href="{{ "/yday/" | relative_url }}" {% if page.url == "/yday/" %}class="active"{% endif %}>yday <span class="tool-eq">date +%j</span></a></li>
+            <li><a href="{{ "/doc/" | relative_url }}" {% if page.url == "/doc/" %}class="active"{% endif %}>doc <span class="tool-eq">man</span></a></li>
+            <li><a href="{{ "/sock/" | relative_url }}" {% if page.url == "/sock/" %}class="active"{% endif %}>sock <span class="tool-eq">netcat</span></a></li>
+            <li><a href="{{ "/path/" | relative_url }}" {% if page.url == "/path/" %}class="active"{% endif %}>path <span class="tool-eq">find</span></a></li>
+          </ul>
+        </nav>
       </header>
       <section>
 
