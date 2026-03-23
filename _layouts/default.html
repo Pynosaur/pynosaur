@@ -52,6 +52,10 @@
       </header>
       <section>
 
+      {% if page.url != "/" %}
+      <p><a href="{{ "/" | absolute_url }}">&larr; Back</a></p>
+      {% endif %}
+
       {{ content }}
 
       </section>
