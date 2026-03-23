@@ -1,12 +1,13 @@
 # Roadmap
 
-## Current Release (v0.1.0)
+## Current Release (v0.2.0)
 
 - **pget** - Package manager (Python Gets)
 - **see** - File viewer with slicing & highlighting
 - **purl** - Pure Python URL transfer tool
 - **yday** - Current day of year (1-366)
 - **doc** - Documentation viewer
+- **sock** - Socket communication tool (send/receive messages and files)
 
 ## Future
 

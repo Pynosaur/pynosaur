@@ -11,6 +11,7 @@ Modern CLI tools with better UX than traditional Unix utilities.
 - [purl](https://github.com/pynosaur/purl) - URL transfer
 - [yday](https://github.com/pynosaur/yday) - Day of year
 - [doc](https://github.com/pynosaur/doc) - Documentation viewer
+- [sock](https://github.com/pynosaur/sock) - Socket communication
 
 ## Get Started
 

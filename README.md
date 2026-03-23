@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <code>v0.1.0</code>
+  <code>v0.2.0</code>
 </p>
 
 <p align="center">
@@ -43,6 +43,7 @@ Pynosaur is an ecosystem of lightweight command-line tools built for **learning,
 | [**purl**](https://github.com/pynosaur/purl) | Pure Python URL transfer tool | `curl` |
 | [**yday**](https://github.com/pynosaur/yday) | Current day of year (1-366) | `date +%j` |
 | [**doc**](https://github.com/pynosaur/doc) | Documentation viewer | `man` |
+| [**sock**](https://github.com/pynosaur/sock) | Socket communication tool | `netcat` / `telnet` |
 
 ## Quick Start
 
