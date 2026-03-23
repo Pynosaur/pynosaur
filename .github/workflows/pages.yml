@@ -24,15 +24,14 @@ jobs:
 
       - name: Fetch tool READMEs
         run: |
-          tools="pget see purl yday doc sock"
-          for tool in $tools; do
+          mkdir -p _includes/readmes
+          for tool in pget see purl yday doc sock; do
             echo "Fetching $tool README..."
-            curl -sL "https://raw.githubusercontent.com/pynosaur/${tool}/main/README.md" -o "/tmp/${tool}_readme.md"
-            head=$(head -n 5 "pages/${tool}.md")
-            echo "$head" > "pages/${tool}.md"
-            echo "" >> "pages/${tool}.md"
-            cat "/tmp/${tool}_readme.md" >> "pages/${tool}.md"
+            curl -sfL "https://raw.githubusercontent.com/pynosaur/${tool}/main/README.md" \
+              -o "_includes/readmes/${tool}.md" || echo "Failed to fetch ${tool}"
+            echo "--- ${tool} size: $(wc -c < _includes/readmes/${tool}.md) bytes"
           done
+          ls -la _includes/readmes/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
