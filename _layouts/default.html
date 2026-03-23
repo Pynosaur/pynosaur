@@ -141,7 +141,7 @@
       (function() {
         var currentPage = '{{ page.url }}';
         var toolList = document.getElementById('toolList');
-        var exclude = ['pynosaur', 'pages'];
+        var exclude = ['pynosaur', 'pages', '.github'];
 
         fetch('https://api.github.com/orgs/Pynosaur/repos?per_page=100')
           .then(function(r) { return r.json(); })
