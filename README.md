@@ -34,19 +34,6 @@ Pynosaur is an ecosystem of lightweight command-line tools built for **learning,
 - **Pure Python exploration** - No external dependencies, just the standard library
 - **Training ground** - Practice software design and Unix philosophy
 
-## Some Tools
-
-| Tool | Description | Equivalent |
-|------|-------------|------------|
-| [**pget**](/pget/) | Package manager (Python Gets) | `apt` / `brew` |
-| [**see**](/see/) | File viewer with slicing & highlighting | `cat` |
-| [**purl**](/purl/) | Pure Python URL transfer tool | `curl` |
-| [**yday**](/yday/) | Current day of year (1-366) | `date +%j` |
-| [**doc**](/doc/) | Documentation viewer | `man` |
-| [**sock**](/sock/) | Socket communication tool | `netcat` / `telnet` |
-| [**path**](/path/) | File and directory finder | `find` |
-| [**plack**](/plack/) | Simple Python linter | `black` |
-
 ## Quick Start
 
 Install **pget** (Python Gets), the package manager for the Pynosaur ecosystem:
