@@ -7,11 +7,11 @@ We love contributions! Here's how you can help:
 1. **Report bugs** - Open an issue in the relevant tool's repository
 2. **Suggest new tools** - Open an issue in [pynosaur/pynosaur](https://github.com/pynosaur/pynosaur/issues)
 3. **Improve documentation** - Submit PRs to any repo
-4. **Build new tools** - Follow our [App Development Guidelines](https://github.com/pynosaur/pget#app-development-guidelines)
+4. **Build new tools** - Follow the [Creating a Program](https://pynosaur.org/creating-a-program/) guide
 
 ## Creating a New Tool
 
-1. Read the [App Development Guidelines](https://github.com/pynosaur/pget#app-development-guidelines)
+1. Read the [Creating a Program](https://pynosaur.org/creating-a-program/) guide
 2. Check the [ROADMAP.md](ROADMAP.md) to see planned tools
 3. Open an issue to discuss your idea
 4. Build your tool following pynosaur conventions
