@@ -70,6 +70,9 @@
       .tool-index li.hidden {
         display: none;
       }
+      .tool-index li.collapsed {
+        display: none;
+      }
       .tool-version {
         color: #bbb;
         font-size: 11px;
@@ -79,6 +82,20 @@
         color: #999;
         font-size: 12px;
         font-style: italic;
+      }
+      .tool-toggle {
+        display: block;
+        padding: 4px 0 4px 2px;
+        font-size: 12px;
+        color: #999;
+        cursor: pointer;
+        border: none;
+        background: none;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .tool-toggle:hover {
+        color: #333;
       }
     </style>
     <!--[if lt IE 9]>
@@ -147,8 +164,42 @@
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
       (function() {
+        var VISIBLE_COUNT = 4;
         var currentPage = '{{ page.url }}';
         var toolList = document.getElementById('toolList');
+        var expanded = false;
+
+        function applyCollapse(items) {
+          var toggleLi = document.getElementById('toolToggleLi');
+          if (toggleLi) toggleLi.remove();
+
+          if (items.length <= VISIBLE_COUNT || expanded) {
+            items.forEach(function(item) {
+              item.li.classList.remove('collapsed');
+            });
+            return;
+          }
+
+          items.forEach(function(item, i) {
+            item.li.classList.toggle('collapsed', i >= VISIBLE_COUNT);
+          });
+
+          toggleLi = document.createElement('li');
+          toggleLi.id = 'toolToggleLi';
+          var btn = document.createElement('button');
+          btn.className = 'tool-toggle';
+          var remaining = items.length - VISIBLE_COUNT;
+          btn.textContent = '+ ' + remaining + ' more...';
+          btn.addEventListener('click', function() {
+            expanded = true;
+            items.forEach(function(item) {
+              item.li.classList.remove('collapsed');
+            });
+            toggleLi.remove();
+          });
+          toggleLi.appendChild(btn);
+          toolList.appendChild(toggleLi);
+        }
 
         fetch('https://api.github.com/orgs/Pynosaur/repos?per_page=100')
           .then(function(r) { return r.json(); })
@@ -182,6 +233,7 @@
                     added.sort(function(x, y) { return x.name.localeCompare(y.name); });
                     toolList.innerHTML = '';
                     added.forEach(function(item) { toolList.appendChild(item.li); });
+                    applyCollapse(added);
                   }
                 });
             });
@@ -192,11 +244,32 @@
 
         document.getElementById('toolSearch').addEventListener('input', function(e) {
           var filter = e.target.value.toLowerCase();
-          var items = document.querySelectorAll('#toolList li');
-          items.forEach(function(item) {
-            var text = item.textContent.toLowerCase();
-            item.classList.toggle('hidden', !text.includes(filter));
-          });
+          var items = document.querySelectorAll('#toolList li:not(#toolToggleLi)');
+          var toggleLi = document.getElementById('toolToggleLi');
+
+          if (filter) {
+            if (toggleLi) toggleLi.style.display = 'none';
+            items.forEach(function(item) {
+              var text = item.textContent.toLowerCase();
+              var matches = text.includes(filter);
+              item.classList.toggle('hidden', !matches);
+              if (matches) item.classList.remove('collapsed');
+            });
+          } else {
+            items.forEach(function(item) {
+              item.classList.remove('hidden');
+            });
+            if (!expanded && toggleLi) {
+              toggleLi.style.display = '';
+              var allItems = [];
+              items.forEach(function(item) {
+                allItems.push({li: item, name: item.dataset.name});
+              });
+              allItems.forEach(function(item, i) {
+                item.li.classList.toggle('collapsed', i >= VISIBLE_COUNT);
+              });
+            }
+          }
         });
       })();
     </script>
