@@ -13,7 +13,7 @@ Thanks for your interest in contributing to the Pynosaur ecosystem. This guide c
 ## Quick Links
 
 - [Creating a New Tool](/creating-a-program/) -- full walkthrough from zero to installable CLI
-- [Roadmap](https://github.com/Pynosaur/pynosaur/blob/main/ROADMAP.md) -- planned tools and ecosystem direction
+- [Roadmap](/roadmap/) -- planned tools and ecosystem direction
 - [Tool Catalog](/) -- existing tools and docs
 
 ---
