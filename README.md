@@ -5,7 +5,7 @@
 <h1 align="center">Pynosaur</h1>
 
 <p align="center">
-  <strong>Exploring classic Unix concepts through pure Python</strong>
+  <strong>Reimagining CLI tools through pure Python</strong>
 </p>
 
 <p align="center">
@@ -26,7 +26,7 @@
 
 ## Overview
 
-Pynosaur is an ecosystem of lightweight command-line tools built for **learning, training, and exploration**. Each tool recreates classic Unix utilities using pure Python, breathing fresh life into old concepts while keeping the purity of Python alive.
+Pynosaur is an ecosystem of lightweight command-line tools built for **learning, training, and exploration**. Each tool reimagines a familiar concept — from networking and file navigation to text processing and beyond — using nothing but pure Python and the standard library.
 
 **Designed for learners and extenders** - These tools are deliberately simple and well-documented, making them perfect for:
 - **Learning by reading** - Understand how CLI tools work under the hood
@@ -58,9 +58,9 @@ yday
 
 Every Pynosaur tool follows these principles:
 
-1. **Pure Python** - Standard library only, keeping Python's purity alive
-2. **Educational** - Learn by recreating classic Unix tools
-3. **Exploratory** - Breathe fresh software into old concepts
+1. **Pure Python** - Standard library only, no external dependencies
+2. **Educational** - Learn by building real, usable tools
+3. **Exploratory** - Reimagine familiar concepts with fresh eyes
 4. **Cross-platform** - Works on macOS, Linux, and Windows
 5. **Self-contained** - Single binary, no runtime dependencies
 
@@ -69,11 +69,11 @@ Every Pynosaur tool follows these principles:
 This project exists to:
 - **Empower learners** - Readable, extendable tools you can actually understand
 - **Train developers** - Learn Python and Unix concepts through real tools
-- **Explore history** - Understand why classic tools were designed the way they were
+- **Explore ideas** - Understand the thinking behind the tools we use every day
 - **Keep Python pure** - Prove what's possible with just the standard library
 - **Enable extension** - Fork any tool and make it yours
 
-**Use them. Learn from them. Extend them.** Every tool is designed to be understood and modified. It's not about replacing Unix tools - it's about understanding and extending them.
+**Use them. Learn from them. Extend them.** Every tool is designed to be understood and modified. It's not about replacing what exists — it's about understanding how it works and making it yours.
 
 ## Documentation
 
