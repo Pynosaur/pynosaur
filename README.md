@@ -79,7 +79,7 @@ This project exists to:
 
 - [Creating a Program](https://pynosaur.org/creating-a-program/) - Build your own Pynosaur tool
 - [Roadmap](ROADMAP.md) - Upcoming tools and features
-- [Contributing](CONTRIBUTING.md) - Help build the ecosystem
+- [Contributing](/contributing/) - Help build the ecosystem
 
 ## License
 
