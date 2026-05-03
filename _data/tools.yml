@@ -30,6 +30,10 @@
   version: "0.1.0"
   description: Pure Python network ping with colorized output
 
+- name: redo
+  version: "0.1.0"
+  description: Repeat a command N times with timing summary
+
 - name: see
   version: "0.1.1"
   description: Display file contents with slicing and emphasis
