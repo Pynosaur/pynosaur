@@ -2,6 +2,10 @@
   version: "0.1.1"
   description: Documentation viewer for Pynosaur CLI tools
 
+- name: clock
+  version: "0.1.0"
+  description: Terminal clock, stopwatch, and timer with curses TUI
+
 - name: path
   version: "0.1.0"
   description: Find files and directories with filters and tree view
