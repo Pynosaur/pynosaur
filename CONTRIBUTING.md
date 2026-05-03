@@ -6,7 +6,7 @@ Thanks for your interest in contributing to the Pynosaur ecosystem. This guide c
 
 ## Quick Links
 
-- [Creating a New Tool](https://pynosaur.org/creating-a-program/) -- full walkthrough from zero to installable CLI
+- [Creating a New Tool](https://github.com/Pynosaur/pynosaur/blob/main/pages/creating-a-program.md) -- full walkthrough from zero to installable CLI
 - [Roadmap](ROADMAP.md) -- planned tools and ecosystem direction
 - [Tool Catalog](https://pynosaur.org/) -- existing tools and docs
 
@@ -38,7 +38,7 @@ Have an idea for an existing tool? Open an issue on the tool's repo. For ecosyst
 
 ### Build a New Tool
 
-See the full [Creating a Program](https://pynosaur.org/creating-a-program/) guide. In short:
+See the full [Creating a Program](https://github.com/Pynosaur/pynosaur/blob/main/pages/creating-a-program.md) guide. In short:
 1. Check the [Roadmap](ROADMAP.md) for planned tools
 2. Open an issue in [Pynosaur/pynosaur](https://github.com/Pynosaur/pynosaur/issues) to discuss
 3. Build following the standard layout

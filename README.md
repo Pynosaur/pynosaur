@@ -77,7 +77,7 @@ This project exists to:
 
 ## Documentation
 
-- [Creating a Program](https://pynosaur.org/creating-a-program/) - Build your own Pynosaur tool
+- [Creating a Program](https://github.com/Pynosaur/pynosaur/blob/main/pages/creating-a-program.md) - Build your own Pynosaur tool
 - [Roadmap](/roadmap/) - Upcoming tools and features
 - [Contributing](/contributing/) - Help build the ecosystem
 
