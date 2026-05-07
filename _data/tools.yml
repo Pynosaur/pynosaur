@@ -15,7 +15,7 @@
   description: Package manager for standalone Python CLI tools
 
 - name: blue
-  version: "0.9.0"
+  version: "0.10.0"
   description: Simple Python linter with YAML configuration
 
 - name: purl
